@@ -7,6 +7,10 @@ const routes = express.Router();
 const classesControllers = new ClassesController();
 const connectionsController = new ConnectionsController();
 
+routes.get('/', (request, response) => {
+  return response.json({ message: 'Welcome to Next Level Week 2'})
+})
+
 routes.post('/classes', classesControllers.create)
 routes.get('/classes', classesControllers.index)
 
