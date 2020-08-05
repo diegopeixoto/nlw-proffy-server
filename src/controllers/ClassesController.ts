@@ -11,6 +11,17 @@ interface ScheduleItem {
 
 export default class ClassesController {
 
+  async list(request: Request, response: Response) {
+
+    const classes = await db('classes')
+       
+      .join('users', 'classes.user_id', '=', 'users.id')
+      .select(['classes.*', 'users.*'])
+
+
+    return response.json(classes);
+  }
+
   async index(request: Request, response: Response) {
     const filters = request.query;
 

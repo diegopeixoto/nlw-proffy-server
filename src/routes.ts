@@ -13,6 +13,7 @@ routes.get('/', (request, response) => {
 
 routes.post('/classes', classesControllers.create)
 routes.get('/classes', classesControllers.index)
+routes.get('/classes/list', classesControllers.list)
 
 routes.post('/connections', connectionsController.create)
 routes.get('/connections', connectionsController.index)
